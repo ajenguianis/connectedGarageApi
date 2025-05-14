@@ -6,12 +6,12 @@ import { InvoiceStatus } from 'src/common/enums/invoice-status.enum';
  * Invoice entity representing a billing invoice for a service.
  */
 @Entity('invoices')
-@Index(['service_id'])
 export class Invoice {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @ManyToOne(() => Service, { nullable: false })
+    @Index('IDX_INVOICE_SERVICE_ID')
     service: Service;
 
     @Column({ type: 'numeric', nullable: false, comment: 'total_amount >= 0' })

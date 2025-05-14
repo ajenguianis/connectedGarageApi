@@ -8,7 +8,7 @@ import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedCol
  * Notification entity representing a notification sent to a customer.
  */
 @Entity('notifications')
-@Index(['customer_id'])
+@Index('IDX_NOTIFICATION_CUSTOMER_ID', ['customer'])
 export class Notification {
     @PrimaryGeneratedColumn('uuid')
     id: string;

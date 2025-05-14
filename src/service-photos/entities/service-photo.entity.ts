@@ -8,13 +8,12 @@ import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedCol
  * ServicePhoto entity representing photos related to a service.
  */
 @Entity('service_photos')
-@Index(['service_id'])
-@Index(['author_id'])
 export class ServicePhoto {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @ManyToOne(() => Service, { nullable: false })
+    @Index('IDX_SERVICE_PHOTO_SERVICE_ID')
     service: Service;
 
     @Column({ type: 'text', nullable: false })
@@ -27,6 +26,7 @@ export class ServicePhoto {
     description?: string;
 
     @ManyToOne(() => Employee, { nullable: true })
+    @Index('IDX_SERVICE_PHOTO_AUTHOR_ID')
     author?: Employee;
 
     @CreateDateColumn()

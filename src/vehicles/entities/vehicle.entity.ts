@@ -4,16 +4,16 @@ import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeor
 
 
 @Entity('vehicles')
-@Index(['customer_id'])
-@Index(['model_id'])
 export class Vehicle {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @ManyToOne(() => Customer, { nullable: false })
+    @Index('IDX_VEHICLE_CUSTOMER_ID')
     customer: Customer;
 
     @ManyToOne(() => VehicleModel, { nullable: false })
+    @Index('IDX_VEHICLE_MODEL_ID')
     model: VehicleModel;
 
     @Column({ type: 'varchar', length: 20, unique: true, nullable: false })

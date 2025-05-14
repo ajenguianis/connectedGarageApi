@@ -1,36 +1,35 @@
-import { NotificationChannel } from 'src/common/enums/notification-channel.enum';
-import { NotificationStatus } from 'src/common/enums/notification-status.enum';
-import { Customer } from 'src/customers/entities/customer.entity';
-import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { SubscriptionStatus } from 'src/common/enums/subscription-status.enum';
+import { Garage } from 'src/garages/entities/garage.entity';
+import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 
 /**
- * Notification entity representing a notification sent to a customer.
+ * Subscription entity representing a garage's subscription plan.
  */
-@Entity('notifications')
-@Index(['customer_id'])
-export class Notification {
+@Entity('subscriptions')
+export class Subscription {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @ManyToOne(() => Customer, { nullable: false })
-    customer: Customer;
+    @ManyToOne(() => Garage, { nullable: false })
+    @Index('IDX_SUBSCRIPTION_GARAGE_ID')
+    garage: Garage;
 
-    @Column({ type: 'varchar', length: 100, nullable: true })
-    title?: string;
+    @Column({ type: 'varchar', length: 50, nullable: false })
+    subscription_type: string;
 
-    @Column({ type: 'text', nullable: false })
-    message: string;
+    @Column({ type: 'date', nullable: false })
+    start_date: Date;
 
-    @Column({ type: 'enum', enum: NotificationChannel, nullable: false })
-    channel: NotificationChannel;
+    @Column({ type: 'date', nullable: true })
+    end_date?: Date;
 
-    @Column({ type: 'enum', enum: NotificationStatus, nullable: false })
-    status: NotificationStatus;
+    @Column({ type: 'numeric', nullable: true, comment: 'amount >= 0' })
+    amount?: number;
 
-    @Column({ type: 'timestamp', nullable: true })
-    sent_at?: Date;
+    @Column({ type: 'enum', enum: SubscriptionStatus, nullable: false })
+    status: SubscriptionStatus;
 
-    @CreateDateColumn()
-    created_at: Date;
+    @Column({ type: 'varchar', length: 20, default: 'monthly' })
+    billing_period: string;
 }

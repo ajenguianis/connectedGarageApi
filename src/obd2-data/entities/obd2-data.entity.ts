@@ -6,13 +6,13 @@ import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeor
  * OBD2Data entity representing diagnostic data from a vehicle.
  */
 @Entity('obd2_data')
-@Index(['vehicle_id'])
-@Index(['timestamp'])
+@Index('IDX_OBD2_DATA_TIMESTAMP', ['timestamp'])
 export class OBD2Data {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @ManyToOne(() => Vehicle, { nullable: false })
+  @Index('IDX_OBD2_DATA_VEHICLE_ID')
   vehicle: Vehicle;
 
   @Column({ type: 'timestamptz', nullable: false })

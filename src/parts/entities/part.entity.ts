@@ -6,12 +6,12 @@ import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeor
  * Part entity representing a spare part in a garage's inventory.
  */
 @Entity('parts')
-@Index(['garage_id'])
 export class Part {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @ManyToOne(() => Garage, { nullable: false })
+    @Index('IDX_PART_GARAGE_ID')
     garage: Garage;
 
     @Column({ type: 'varchar', length: 100, nullable: false })

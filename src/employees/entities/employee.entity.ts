@@ -1,1 +1,35 @@
-export class Employee {}
+import { Garage } from 'src/garages/entities/garage.entity';
+import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+
+
+/**
+ * Employee entity representing a garage employee.
+ */
+@Entity('employees')
+@Index(['email'])
+export class Employee {
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
+
+    @Column({ type: 'varchar', length: 100, nullable: false })
+    name: string;
+
+    @Column({ type: 'varchar', length: 255, unique: true, nullable: false })
+    email: string;
+
+    @Column({ type: 'varchar', length: 255, nullable: false })
+    password_hash: string;
+
+    @ManyToOne(() => Garage, { nullable: true })
+    @Index('IDX_EMPLOYEE_GARAGE_ID')
+    garage?: Garage;
+
+    @Column({ type: 'date', nullable: true })
+    hire_date?: Date;
+
+    @Column({ type: 'boolean', default: true })
+    is_active: boolean;
+
+    @CreateDateColumn()
+    created_at: Date;
+}

@@ -11,7 +11,6 @@ import { InvoicesModule } from './invoices/invoices.module';
 import { Obd2DataModule } from './obd2-data/obd2-data.module';
 import { SignaturesModule } from './signatures/signatures.module';
 import { ServicePhotosModule } from './service-photos/service-photos.module';
-import { NotificationsModule } from './notifications/notifications.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { PartsModule } from './parts/parts.module';
 import { ServicePartsModule } from './service-parts/service-parts.module';
@@ -21,6 +20,7 @@ import { RolesModule } from './roles/roles.module';
 import { PermissionsModule } from './permissions/permissions.module';
 import { EmployeeRolesModule } from './employee-roles/employee-roles.module';
 import { RolePermissionsModule } from './role-permissions/role-permissions.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -50,7 +50,6 @@ import { RolePermissionsModule } from './role-permissions/role-permissions.modul
     Obd2DataModule,
     SignaturesModule,
     ServicePhotosModule,
-    NotificationsModule,
     SubscriptionsModule,
     PartsModule,
     ServicePartsModule,
@@ -60,6 +59,7 @@ import { RolePermissionsModule } from './role-permissions/role-permissions.modul
     PermissionsModule,
     EmployeeRolesModule,
     RolePermissionsModule,
+    NotificationsModule,
   ],
 })
 export class AppModule { }

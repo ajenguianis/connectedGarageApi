@@ -6,12 +6,12 @@ import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedCol
  * Signature entity representing a customer signature.
  */
 @Entity('signatures')
-@Index(['customer_id'])
 export class Signature {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @ManyToOne(() => Customer, { nullable: true })
+    @Index('IDX_SIGNATURE_CUSTOMER_ID')
     customer?: Customer;
 
     @Column({ type: 'text', nullable: false })
