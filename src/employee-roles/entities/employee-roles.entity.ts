@@ -7,7 +7,7 @@ import { Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
  * EmployeeRoles entity representing the many-to-many relationship between employees and roles.
  */
 @Entity('employee_roles')
-export class EmployeeRole {
+export class EmployeeRoles {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

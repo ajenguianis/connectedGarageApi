@@ -1,6 +1,6 @@
 import { Permission } from 'src/permissions/entities/permission.entity';
 import { Role } from 'src/roles/entities/role.entity';
-import { Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 
 /**
@@ -19,4 +19,6 @@ export class RolePermissions {
     @ManyToOne(() => Permission, { nullable: false })
     @Index('IDX_ROLE_PERMISSIONS_PERMISSION_ID')
     permission: Permission;
+    @CreateDateColumn()
+    created_at: Date;
 }

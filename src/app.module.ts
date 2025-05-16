@@ -21,6 +21,7 @@ import { PermissionsModule } from './permissions/permissions.module';
 import { EmployeeRolesModule } from './employee-roles/employee-roles.module';
 import { RolePermissionsModule } from './role-permissions/role-permissions.module';
 import { NotificationsModule } from './notifications/notifications.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -60,6 +61,7 @@ import { NotificationsModule } from './notifications/notifications.module';
     EmployeeRolesModule,
     RolePermissionsModule,
     NotificationsModule,
+    AuthModule,
   ],
 })
 export class AppModule { }

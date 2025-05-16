@@ -12,13 +12,16 @@ export class Employee {
     id: string;
 
     @Column({ type: 'varchar', length: 100, nullable: false })
-    name: string;
+    first_name: string;
+
+    @Column({ type: 'varchar', length: 100, nullable: false })
+    last_name: string;
 
     @Column({ type: 'varchar', length: 255, unique: true, nullable: false })
     email: string;
 
     @Column({ type: 'varchar', length: 255, nullable: false })
-    password_hash: string;
+    password: string;
 
     @ManyToOne(() => Garage, { nullable: true })
     @Index('IDX_EMPLOYEE_GARAGE_ID')

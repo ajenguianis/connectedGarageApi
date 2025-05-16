@@ -1,26 +1,33 @@
 import { Injectable } from '@nestjs/common';
-import { CreateEmployeeDto } from './dto/create-employee.dto';
-import { UpdateEmployeeDto } from './dto/update-employee.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Employee } from './entities/employee.entity';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class EmployeesService {
-  create(createEmployeeDto: CreateEmployeeDto) {
-    return 'This action adds a new employee';
+  constructor(
+    @InjectRepository(Employee)
+    private employeesRepository: Repository<Employee>,
+  ) { }
+
+  async findOneByEmail(email: string): Promise<Employee | undefined> {
+    const employee = await this.employeesRepository.findOne({
+      where: { email },
+      select: ['id', 'email', 'password', 'first_name', 'last_name'],
+    });
+    return employee === null ? undefined : employee;
   }
 
-  findAll() {
-    return `This action returns all employees`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} employee`;
-  }
-
-  update(id: number, updateEmployeeDto: UpdateEmployeeDto) {
-    return `This action updates a #${id} employee`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} employee`;
+  async create(employeeData: Partial<Employee>): Promise<Employee> {
+    if (!employeeData.password) {
+      throw new Error('Password is required to create an employee');
+    }
+    const hashedPassword = await bcrypt.hash(employeeData.password, 10);
+    const employee = this.employeesRepository.create({
+      ...employeeData,
+      password: hashedPassword,
+    });
+    return this.employeesRepository.save(employee);
   }
 }

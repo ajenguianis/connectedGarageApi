@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { RolePermissions } from 'src/role-permissions/entities/role-permission.entity';
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 /**
  * Permission entity representing a specific permission.
@@ -19,4 +20,6 @@ export class Permission {
 
     @CreateDateColumn()
     created_at: Date;
+    @OneToMany(() => RolePermissions, (rolePermissions) => rolePermissions.permission)
+    rolePermissions: RolePermissions[];
 }
