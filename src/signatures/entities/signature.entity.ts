@@ -1,4 +1,4 @@
-import { Customer } from 'src/customers/entities/customer.entity';
+import { Customer } from '../../customers/entities/customer.entity';
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

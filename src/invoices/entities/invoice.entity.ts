@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { Service } from 'src/services/entities/service.entity';
-import { InvoiceStatus } from 'src/common/enums/invoice-status.enum';
+import { Service } from '../../services/entities/service.entity';
+import { InvoiceStatus } from '../../common/enums/invoice-status.enum';
 
 /**
  * Invoice entity representing a billing invoice for a service.

@@ -1,5 +1,5 @@
-import { SubscriptionStatus } from 'src/common/enums/subscription-status.enum';
-import { Garage } from 'src/garages/entities/garage.entity';
+import { SubscriptionStatus } from '../../common/enums/subscription-status.enum';
+import { Garage } from '../../garages/entities/garage.entity';
 import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

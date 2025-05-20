@@ -1,6 +1,6 @@
-import { ServicePhotoType } from 'src/common/enums/service-photo-type.enum';
-import { Employee } from 'src/employees/entities/employee.entity';
-import { Service } from 'src/services/entities/service.entity';
+import { ServicePhotoType } from '../../common/enums/service-photo-type.enum';
+import { Employee } from '../../employees/entities/employee.entity';
+import { Service } from '../../services/entities/service.entity';
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

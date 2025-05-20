@@ -8,10 +8,11 @@ import { JwtStrategy } from './jwt.strategy';
 import { Employee } from '../employees/entities/employee.entity';
 import { EmployeesService } from '../employees/employees.service';
 import { EmployeeRoles } from 'src/employee-roles/entities/employee-roles.entity';
+import { Garage } from 'src/garages/entities/garage.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Employee, EmployeeRoles]),
+    TypeOrmModule.forFeature([Employee, EmployeeRoles, Garage]),
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({

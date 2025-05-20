@@ -1,4 +1,4 @@
-import { RolePermissions } from 'src/role-permissions/entities/role-permission.entity';
+import { RolePermissions } from '../../role-permissions/entities/role-permissions.entity';
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 /**

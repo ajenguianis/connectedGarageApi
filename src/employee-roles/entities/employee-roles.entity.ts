@@ -1,5 +1,5 @@
-import { Employee } from 'src/employees/entities/employee.entity';
-import { Role } from 'src/roles/entities/role.entity';
+import { Employee } from '../../employees/entities/employee.entity';
+import { Role } from '../../roles/entities/role.entity';
 import { Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

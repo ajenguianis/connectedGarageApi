@@ -1,4 +1,4 @@
-import { Garage } from 'src/garages/entities/garage.entity';
+import { Garage } from '../../garages/entities/garage.entity';
 import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

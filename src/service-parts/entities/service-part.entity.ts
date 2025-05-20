@@ -1,5 +1,5 @@
-import { Part } from 'src/parts/entities/part.entity';
-import { Service } from 'src/services/entities/service.entity';
+import { Part } from '../../parts/entities/part.entity';
+import { Service } from '../../services/entities/service.entity';
 import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 /**

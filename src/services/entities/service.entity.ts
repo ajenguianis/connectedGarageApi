@@ -1,8 +1,8 @@
-import { ServiceStatus } from 'src/common/enums/service-status.enum';
-import { ServiceType } from 'src/common/enums/service-type.enum';
-import { Employee } from 'src/employees/entities/employee.entity';
-import { Garage } from 'src/garages/entities/garage.entity';
-import { Vehicle } from 'src/vehicles/entities/vehicle.entity';
+import { ServiceStatus } from '../../common/enums/service-status.enum';
+import { ServiceType } from '../../common/enums/service-type.enum';
+import { Employee } from '../../employees/entities/employee.entity';
+import { Garage } from '../../garages/entities/garage.entity';
+import { Vehicle } from '../../vehicles/entities/vehicle.entity';
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

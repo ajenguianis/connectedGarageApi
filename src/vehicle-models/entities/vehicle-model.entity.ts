@@ -1,4 +1,4 @@
-import { FuelType } from 'src/common/enums/fuel-type.enum';
+import { FuelType } from '../../common/enums/fuel-type.enum';
 import { Column, CreateDateColumn, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('vehicle_models')

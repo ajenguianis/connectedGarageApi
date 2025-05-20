@@ -1,7 +1,7 @@
-import { AppointmentStatus } from 'src/common/enums/appointment-status.enum';
-import { Customer } from 'src/customers/entities/customer.entity';
-import { Garage } from 'src/garages/entities/garage.entity';
-import { Vehicle } from 'src/vehicles/entities/vehicle.entity';
+import { AppointmentStatus } from '../../common/enums/appointment-status.enum';
+import { Customer } from '../../customers/entities/customer.entity';
+import { Garage } from '../../garages/entities/garage.entity';
+import { Vehicle } from '../../vehicles/entities/vehicle.entity';
 import {
     Column,
     CreateDateColumn,

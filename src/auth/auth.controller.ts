@@ -15,7 +15,7 @@ export class AuthController {
         private employeesService: EmployeesService,
     ) { }
 
-    @Post('employee/login')
+    @Post('employee')
     @HttpCode(HttpStatus.OK)
     @ApiOperation({ summary: 'Log in an employee' })
     @ApiBody({

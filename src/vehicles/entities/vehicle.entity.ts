@@ -1,5 +1,5 @@
-import { Customer } from 'src/customers/entities/customer.entity';
-import { VehicleModel } from 'src/vehicle-models/entities/vehicle-model.entity';
+import { Customer } from '../../customers/entities/customer.entity';
+import { VehicleModel } from '../../vehicle-models/entities/vehicle-model.entity';
 import { Column, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 

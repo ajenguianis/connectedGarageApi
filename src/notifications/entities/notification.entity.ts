@@ -1,6 +1,6 @@
-import { NotificationChannel } from 'src/common/enums/notification-channel.enum';
-import { NotificationStatus } from 'src/common/enums/notification-status.enum';
-import { Customer } from 'src/customers/entities/customer.entity';
+import { NotificationChannel } from '../../common/enums/notification-channel.enum';
+import { NotificationStatus } from '../../common/enums/notification-status.enum';
+import { Customer } from '../../customers/entities/customer.entity';
 import { Column, CreateDateColumn, Entity, Index, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 
