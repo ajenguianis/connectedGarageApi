@@ -34,6 +34,12 @@ export class AuthService {
         const payload = { email: employee.email, sub: employee.id };
         return {
             access_token: this.jwtService.sign(payload),
+            user: {
+                firstName: employee.first_name,
+                lastName: employee.last_name,
+                email: employee.email,
+            }
+
         };
     }
     async create(createEmployeeDto: CreateEmployeeDto): Promise<Employee> {
